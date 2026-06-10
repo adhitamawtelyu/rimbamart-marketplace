@@ -3,12 +3,18 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>RimbaMart — marketplace ala Amazon</title>
-  <meta name="description" content="Marketplace demo responsif dengan login, cart, wishlist, pencarian, kategori, dan checkout demo." />
-  <link rel="stylesheet" href="./styles.css" />
+  <title>RimbaMart — marketplace minimalis</title>
+  <meta name="description" content="Marketplace demo minimalis, rapi, responsif, dengan login, cart, wishlist, dan checkout demo." />
+  <link rel="stylesheet" href="./css/variables.css?v=2" />
+  <link rel="stylesheet" href="./css/style.css?v=2" />
 </head>
 <body>
-  <div class="topbar"><div class="wrap"><div>Gratis ongkir untuk item tertentu · Login untuk wishlist dan checkout cepat</div><div>Pengiriman cepat · retur mudah</div></div></div>
+  <div class="topbar">
+    <div class="wrap">
+      <div>Gratis ongkir untuk item tertentu · Login untuk wishlist dan checkout cepat</div>
+      <div>Pengiriman cepat · retur mudah</div>
+    </div>
+  </div>
 
   <header class="header" data-topbar>
     <div class="wrap header-row">
@@ -24,39 +30,50 @@
   </header>
 
   <main id="home" class="wrap">
-    <div class="hero-wrap">
-      <aside class="sidebar">
-        <h3>Kategori utama</h3>
-        <div class="sidebar-list" id="sidebarCats"></div>
-        <div class="note">Layout ini dipadatkan ala marketplace besar: search dominan, hero tidak terlalu besar, dan mobile dibuat 2 kolom supaya scroll lebih efisien.</div>
-      </aside>
-      <section class="hero-main">
-        <div class="hero-mini">
-          <article class="card mini-card" style="grid-column:1/-1">
-            <div class="tag">Deals of the Day</div>
-            <h1>Belanja cepat, cari mudah.</h1>
-            <p>Header dipadatkan, search full-width, dan kartu produk dibuat lebih rapat supaya rasanya lebih dekat ke Amazon.</p>
-            <div class="hero-actions">
-              <a class="btn btn-primary" href="#catalog">Belanja sekarang</a>
-              <button class="btn btn-secondary" id="quickLoginBtn" type="button">Coba login demo</button>
-            </div>
-          </article>
+    <section class="hero">
+      <article class="banner">
+        <div class="banner-copy">
+          <span class="tag">Marketplace minimalis</span>
+          <h1>Belanja cepat, rapi, dan proper.</h1>
+          <p>Struktur dibuat lebih clean: hero pendek, search dominan, kartu produk padat, dan mobile-first supaya enak dipakai di layar kecil.</p>
+          <div class="banner-actions">
+            <a class="btn btn-primary" href="#catalog">Belanja sekarang</a>
+            <button class="btn btn-secondary" id="quickLoginBtn" type="button">Coba login demo</button>
+          </div>
+        </div>
+        <div class="banner-grid">
           <article class="card mini-card">
             <div class="tag">Flash Sale</div>
-            <h2>Elektronik</h2><p>Diskon cepat, stok terbatas, dan CTA tegas.</p>
+            <h2>Elektronik</h2>
+            <p>Produk inti tampil cepat dan ringkas.</p>
           </article>
           <article class="card mini-card">
             <div class="tag">Best Seller</div>
-            <h2>Rumah & dapur</h2><p>Tampilan ringkas dan padat untuk scan cepat.</p>
+            <h2>Rumah & dapur</h2>
+            <p>Layout bersih, scan lebih mudah.</p>
+          </article>
+          <article class="card mini-card">
+            <div class="tag">Promo</div>
+            <h2>Fashion</h2>
+            <p>CTA singkat dan jelas.</p>
+          </article>
+          <article class="card mini-card">
+            <div class="tag">Trust</div>
+            <h2>Retur mudah</h2>
+            <p>Signal kepercayaan dibuat nyata.</p>
           </article>
         </div>
-        <div class="hero-metrics">
-          <div class="metric"><strong>1.2M+</strong><span>produk aktif</span></div>
-          <div class="metric"><strong>24 jam</strong><span>flash sale harian</span></div>
-          <div class="metric"><strong>4.8/5</strong><span>rating toko rata-rata</span></div>
+      </article>
+
+      <aside class="panel sidebar">
+        <h3>Kategori utama</h3>
+        <div class="sidebar-list" id="sidebarCats"></div>
+        <div class="panel" style="padding: 0; box-shadow: none; border: 0">
+          <h3>Kenapa lebih proper?</h3>
+          <p style="margin:0;color:var(--muted);line-height:1.65;font-size:14px">Hero dipangkas, whitespace dikurangi, produk dirapatkan, dan bottom nav dibuat ergonomis untuk jempol.</p>
         </div>
-      </section>
-    </div>
+      </aside>
+    </section>
 
     <section class="section">
       <div class="strip">
@@ -67,18 +84,14 @@
       </div>
     </section>
 
-    <section class="section">
+    <section class="section" id="deals">
       <div class="section-head">
         <div>
           <h2>Promo dan rekomendasi</h2>
-          <p>Lebih kecil, lebih rapi, dan tidak terlalu korporat. Fokusnya langsung ke produk dan keputusan beli.</p>
+          <p>Dibuat ringkas, informatif, dan tetap padat ala marketplace besar.</p>
         </div>
       </div>
-      <div class="deals-grid">
-        <article class="card deal"><span class="tag">Flash Deal</span><h3>Diskon gadget tiap hari.</h3><p>Visual besar, teks singkat, dan aksi beli jelas.</p><img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=600&q=80" alt="Promo gadget" /></article>
-        <article class="card deal"><span class="tag">Best Seller</span><h3>Produk rumah yang lagi laku.</h3><p>Rating dan trust signal diprioritaskan.</p><img src="https://images.unsplash.com/photo-1556228578-8c89e6adf883?auto=format&fit=crop&w=600&q=80" alt="Promo rumah tangga" /></article>
-        <article class="card deal"><span class="tag">Rekomendasi</span><h3>Fashion & lifestyle pilihan.</h3><p>Mobile dipadatkan jadi 2 kolom yang enak discan.</p><img src="https://images.unsplash.com/photo-1523398002811-999ca8dec234?auto=format&fit=crop&w=600&q=80" alt="Promo fashion" /></article>
-      </div>
+      <div class="deals" id="dealsGrid"></div>
     </section>
 
     <section class="section" id="catalog">
@@ -100,14 +113,19 @@
             <div class="filter-list" id="filterList"></div>
           </div>
           <div class="card filter-card">
-            <h3>Kenapa lebih rapi?</h3>
-            <p style="margin:0;color:var(--muted);line-height:1.65;font-size:14px">Search full-width, hero lebih kecil, kartu produk lebih ringkas, dan bottom nav terasa lebih mobile-native.</p>
+            <h3>Trust signals</h3>
+            <div class="chips" id="trustBadges"></div>
           </div>
         </aside>
         <section>
           <div class="products" id="productGrid" aria-live="polite"></div>
           <div class="section" style="margin-top:18px">
-            <div class="section-head"><div><h2>Rekomendasi hari ini</h2><p>Checkout demo aktif kalau user login. Keranjang dan wishlist tersimpan di browser lokal.</p></div></div>
+            <div class="section-head">
+              <div>
+                <h2>Rekomendasi hari ini</h2>
+                <p>Checkout demo aktif kalau user login. Keranjang dan wishlist tersimpan di browser lokal.</p>
+              </div>
+            </div>
             <div class="rows" id="recommendations"></div>
           </div>
         </section>
@@ -117,22 +135,34 @@
 
   <footer class="footer">
     <div class="wrap footer-inner">
-      <strong>RimbaMart</strong>
-      <div class="footer-links"><a href="#home">Beranda</a><a href="#catalog">Produk</a><button class="btn" id="footerLoginBtn" type="button" style="min-height:36px;padding:0 14px;background:#232f3e;color:#fff">Masuk</button></div>
-      <span id="year"></span>
+      <div>
+        <strong>RimbaMart</strong>
+        <div style="margin-top:8px;color:rgba(255,255,255,.72);font-size:13px;line-height:1.6">Marketplace demo minimalis, rapi, dan responsif.</div>
+      </div>
+      <div class="footer-links" id="footerColumns"></div>
+      <div style="text-align:right">
+        <button class="btn" id="footerLoginBtn" type="button" style="background:#ff9900;color:#111">Masuk</button>
+        <div style="margin-top:10px;color:rgba(255,255,255,.7);font-size:12px" id="year"></div>
+      </div>
     </div>
   </footer>
 
   <nav class="bottom-nav" aria-label="Navigasi bawah mobile">
-    <button type="button" id="mobileHome"><strong>⌂</strong><span>Beranda</span></button>
-    <button type="button" id="mobileSearch"><strong>⌕</strong><span>Cari</span></button>
-    <button type="button" id="mobileCart"><strong>🛒</strong><span>Keranjang</span></button>
-    <button type="button" id="mobileProfile"><strong>☺</strong><span>Profil</span></button>
+    <button type="button" data-nav="home" id="mobileHome"><strong>⌂</strong><span>Beranda</span></button>
+    <button type="button" data-nav="deals" id="mobileDeals"><strong>⌕</strong><span>Deals</span></button>
+    <button type="button" data-nav="catalog" id="mobileCart"><strong>🛒</strong><span>Keranjang</span></button>
+    <button type="button" data-nav="profile" id="mobileProfile"><strong>☺</strong><span>Profil</span></button>
   </nav>
 
   <div class="modal-overlay" id="modalOverlay"></div>
   <aside class="modal" id="authModal" role="dialog" aria-modal="true" aria-labelledby="authTitle">
-    <div class="modal-head"><div><strong id="authTitle">Login / Daftar</strong><div style="color:var(--muted);font-size:13px" id="authSubtitle">Masuk untuk wishlist, cart, dan checkout.</div></div><button class="close" id="closeAuth" aria-label="Tutup">✕</button></div>
+    <div class="modal-head">
+      <div>
+        <strong id="authTitle">Login / Daftar</strong>
+        <div style="color:var(--muted);font-size:13px" id="authSubtitle">Masuk untuk wishlist, cart, dan checkout.</div>
+      </div>
+      <button class="close" id="closeAuth" aria-label="Tutup">✕</button>
+    </div>
     <div class="modal-body">
       <div class="auth">
         <div class="auth-spot"><h3>Login demo aktif</h3><p>Isi email, password minimal 6 karakter, dan nama tampilan. Setelah login, UI akan berubah jadi mode akun aktif.</p></div>
@@ -150,18 +180,22 @@
   <div class="drawer-overlay" id="drawerOverlay"></div>
   <aside class="drawer" id="cartDrawer" aria-label="Keranjang belanja">
     <div class="drawer-head">
-      <div style="display:flex;justify-content:space-between;align-items:center;gap:12px"><div><strong style="display:block;font-size:1.15rem">Keranjang</strong><span style="color:var(--muted);font-size:13px" id="cartUserState">Belum login</span></div><button class="close" id="closeCart" aria-label="Tutup">✕</button></div>
+      <div style="display:flex;justify-content:space-between;align-items:center;gap:12px">
+        <div><strong style="display:block;font-size:1.15rem">Keranjang</strong><span style="color:var(--muted);font-size:13px" id="cartUserState">Belum login</span></div>
+        <button class="close" id="closeCart" aria-label="Tutup">✕</button>
+      </div>
     </div>
     <div class="drawer-body" id="cartItems"></div>
     <div class="drawer-foot">
       <div class="progress" aria-label="Progress gratis ongkir"><div id="shipBar" style="width:0%"></div></div>
       <div class="drawer-total"><span style="color:var(--muted)">Subtotal</span><strong id="cartSubtotal">Rp0</strong></div>
       <button class="btn btn-primary" id="checkoutBtn" type="button">Checkout sekarang</button>
-      <button class="btn" id="clearCartBtn" type="button" style="background:var(--surface-2);border:1px solid var(--line)">Kosongkan keranjang</button>
+      <button class="btn btn-secondary" id="clearCartBtn" type="button">Kosongkan keranjang</button>
+      <div class="chips" style="margin-top:2px"><span class="chip" style="background:#f8fafc">Visa</span><span class="chip" style="background:#f8fafc">Mastercard</span><span class="chip" style="background:#f8fafc">e-Wallet</span></div>
     </div>
   </aside>
 
-  <script src="./data.js"></script>
-  <script src="./app.js"></script>
+  <script src="./js/data.js?v=2"></script>
+  <script src="./js/app.js?v=2"></script>
 </body>
 </html>

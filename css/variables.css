@@ -1,0 +1,17 @@
+:root {
+  --bg: #f5f6f8;
+  --surface: #ffffff;
+  --surface-2: #f0f3f7;
+  --surface-3: #e9eef5;
+  --text: #111827;
+  --muted: #667085;
+  --brand: #ff9900;
+  --brand-2: #232f3e;
+  --line: rgba(17, 24, 39, 0.10);
+  --shadow: 0 12px 30px rgba(15, 23, 42, 0.08);
+  --radius: 18px;
+  --radius-sm: 12px;
+  --container: 1480px;
+  --gap: 16px;
+  --gap-sm: 10px;
+}
