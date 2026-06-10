@@ -182,6 +182,8 @@ function bindCategory(btn) {
   const c = btn?.dataset?.category;
   if (!c) return;
   state.category = c;
+  state.query = '';
+  if (el.searchInput) el.searchInput.value = '';
   renderChips();
   renderSort();
   renderProducts();
@@ -218,6 +220,12 @@ function init() {
   closeAuth();
   closeCart();
   document.body.classList.remove('locked');
+}
+let booted = false;
+function boot() {
+  if (booted) return;
+  booted = true;
+  init();
 }
 
 document.addEventListener('click', (e) => {
@@ -274,7 +282,9 @@ io.observe(document.getElementById('home'));
 io.observe(document.getElementById('catalog'));
 io.observe(document.getElementById('deals'));
 if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', init, { once: true });
+  document.addEventListener('DOMContentLoaded', boot, { once: true });
 } else {
-  init();
+  boot();
 }
+setTimeout(boot, 0);
+window.addEventListener('load', boot, { once: true });
