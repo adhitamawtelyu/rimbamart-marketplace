@@ -227,6 +227,7 @@ function boot() {
   booted = true;
   init();
 }
+boot();
 
 document.addEventListener('click', (e) => {
   const t = e.target.closest('[data-category],[data-sort],[data-add],[data-dec],[data-inc],[data-wish],[data-detail]');
@@ -277,10 +278,14 @@ el.mobileSearch.addEventListener('click', () => el.searchInput.focus());
 el.mobileCart.addEventListener('click', () => { openCart(); setSection('catalog'); });
 el.mobileProfile.addEventListener('click', () => (state.user ? alert(`Akun aktif: ${state.user.email}`) : openAuth()));
 el.mobileDeals.addEventListener('click', () => { document.getElementById('deals').scrollIntoView({ behavior: 'smooth', block: 'start' }); setSection('deals'); });
-const io = new IntersectionObserver((entries) => { entries.forEach((entry) => { if (entry.isIntersecting) setNavActive(entry.target.id); }); }, { threshold: 0.35 });
-io.observe(document.getElementById('home'));
-io.observe(document.getElementById('catalog'));
-io.observe(document.getElementById('deals'));
+const io = 'IntersectionObserver' in window
+  ? new IntersectionObserver((entries) => { entries.forEach((entry) => { if (entry.isIntersecting) setNavActive(entry.target.id); }); }, { threshold: 0.35 })
+  : null;
+if (io) {
+  io.observe(document.getElementById('home'));
+  io.observe(document.getElementById('catalog'));
+  io.observe(document.getElementById('deals'));
+}
 if (document.readyState === 'loading') {
   document.addEventListener('DOMContentLoaded', boot, { once: true });
 } else {
